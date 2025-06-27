@@ -1,0 +1,1111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color:beige;
+    line-height: 1.6;
+}
+
+/* Estilo del menú */
+header {
+    background-color: red;
+    color:aqua;
+    padding: 1rem 0;
+    transition: background-color 0.3s;
+}
+
+header .menu {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+
+/* Para que el header se adapte en móviles */
+@media (max-width: 768px) {
+    .nav_header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
+.nav_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1rem;
+}
+
+.empresa{
+    font-size: 50px;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+/* Estilos generales del menú */
+.menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.menu a.activo {
+    font-weight: bold;
+    color: #482729; /* Color rojo */
+    border-bottom: 3px solid #0d1424; /* Subrayado */
+    background: rgba(230, 57, 70, 0.1); /* Fondo ligero */
+    border-radius: 5px;
+}
+
+/* Estilo al pasar el mouse */
+.menu a:hover {
+    background-color: #f0f0f0;
+    color: red;
+}
+
+/* Pie de página */
+footer {
+    background-color: red;
+    color:aqua;
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+footer .redes-sociales img {
+    width: 30px;
+    height: 30px;
+    margin: 0 0.5rem;
+    transition: transform 0.2s;
+}
+
+footer .redes-sociales img:hover {
+    transform: scale(1.1);
+}
+
+/* Ajuste en móviles */
+@media (max-width: 768px) {
+    .redes-sociales {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    footer p {
+        font-size: 14px;
+    }
+}
+
+/*------------------INDEX-------------------*/
+
+.bienvenida {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 2rem;
+}
+
+.bienvenida .cont_text {
+    flex: 1;
+    text-align: left;
+}
+
+.bienvenida .cont_text .titulo1 {
+    color: #e63946;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.bienvenida .cont_text .parrafo {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.bienvenida .imagen-bienvenida {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bienvenida .imagen-bienvenida img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    
+    
+.bienvenida {
+        flex-direction: column;
+        text-align: center;
+    }    
+
+.bienvenida .cont_text,
+    .bienvenida .imagen-bienvenida {
+        flex: none;
+        width: 100%;
+    }
+
+    .bienvenida .cont_text .titulo1 {
+        font-size: 2rem;
+    }
+}
+
+.contenedor-noticias {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.noticia {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.noticia h3 {
+    margin-top: 0;
+    color: #e63946;
+}
+
+.titulo3 {
+    font-size: 2rem;
+    color: #e63946;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.noticia p {
+    margin: 5px 0;
+    color: #333;
+}
+
+/*-------------------------------------*/
+
+/* Estilo para lista interactiva */
+.proyectos {
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: center;
+    padding: 2rem;
+    background: #fefefe;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.proyectos .titulo2 {
+    font-size: 2rem;
+    color: #e63946;
+    margin-bottom: 1.5rem;
+}
+
+.proyectos .lista-proyectos {
+    list-style: none;
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.proyectos .lista-proyectos li {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
+
+.proyectos .lista-proyectos .icono {
+    font-size: 1.5rem;
+    color: #e63946;
+}
+
+/*----------PRESUPUESTO-------------*/
+
+.container{
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5% 0;
+}
+
+/* Estilos para los elementos del container */
+.container *{
+    box-sizing: border-box;
+}
+
+/* Estilos de las listas */
+.flex-outer, .flex-inner{
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Estilos de la lista principal */
+.flex-outer{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.flex-outer li, .flex-inner{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.flex-inner{
+    padding: 0 8px;
+    justify-content:space-between;
+}
+
+.flex-outer > li:not(:last-child){
+    margin-bottom: 20px;
+}
+
+.flex-outer li label, .flex-outer li p{
+    padding: 8px;
+    font-weight: 300;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+}
+
+.flex-outer > li >label, .flex-outer li p{
+    flex: 1 0 120px;
+    max-width: 220px;
+}
+
+.flex-outer > li > label + *, .flex-inner{
+    flex: 1 0 220px;
+}
+
+.flex-outer li p{
+    margin: 0;
+}
+
+.flex-outer li input:not([type='radio']), .flex-outer li textarea{
+    padding: 15px;
+    border: none;
+}
+
+.flex-outer .liButtons button{
+    margin-left: auto;
+    padding: 8px 16px;
+    border: none;
+    background-color: #333;
+    color: #f2f2f2;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    border-radius: 2px;
+}
+
+.flex-outer .liButtons{
+    display: flex;
+    flex: wrap;
+    align-items: center;
+}
+
+/* Estilos para el contenedor2 */
+.container2 {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5% 0;
+    background-color: #f9f9f9; /* Fondo claro para diferenciar */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+}
+
+.container2 h2 {
+    text-align: center; /* Centrar el texto */
+    color: #e63946; /* Color rojo elegante */
+    font-size: 24px; /* Tamaño de fuente más grande */
+    font-weight: bold; /* Negrita para destacar */
+    margin-bottom: 20px; /* Espaciado inferior */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras */
+} 
+
+/* Aplicar estilos similares a las listas dentro de container2 */
+.container2 .flex-outer, .container2 .flex-inner {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.container2 .flex-outer {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.container2 .flex-outer li, .container2 .flex-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.container2 .flex-inner {
+    padding: 0 8px;
+    justify-content: space-between;
+}
+
+.container2 .flex-outer > li:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.container2 .flex-outer li label, .container2 .flex-outer li p {
+    padding: 8px;
+    font-weight: 300;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.container2 .flex-outer > li > label, .container2 .flex-outer li p {
+    flex: 1 0 120px;
+    max-width: 220px;
+}
+
+.container2 .flex-outer > li > label + *, .container2 .flex-inner {
+    flex: 1 0 220px;
+}
+
+.container2 .flex-outer li p {
+    margin: 0;
+}
+
+.container2 .flex-outer li input:not([type='radio']), .container2 .flex-outer li textarea {
+    padding: 15px;
+    border: 1px solid #ccc; /* Borde ligero */
+    border-radius: 4px; /* Bordes redondeados */
+    width: 100%;
+    font-size: 14px;
+}
+
+/* Estilos para los botones dentro de container2 */
+.container2 .liButtons button {
+    margin-left: auto;
+    padding: 8px 16px;
+    border: none;
+    background-color: #333;
+    color: #f2f2f2;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.container2 .liButtons button:hover {
+    background-color: #555; /* Cambiar color al pasar el mouse */
+}
+
+/* Estilos para los fieldsets */
+.container2 fieldset {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.container2 legend {
+    font-weight: bold;
+    color: #333;
+    padding: 0 10px;
+    text-transform: uppercase;
+}
+
+/* Estilos para los inputs tipo radio y checkbox */
+.container2 input[type="radio"], .container2 input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.container2 label {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Estilo para el presupuesto final */
+#presupuestoFinal {
+    font-size: 18px;
+    font-weight: bold;
+    color: #28a745;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Botones de envío y reset */
+.container2 button[type="submit"], .container2 button[type="reset"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.container2 button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.container2 button[type="reset"] {
+    background-color: #6c757d;
+}
+
+.container2 button[type="reset"]:hover {
+    background-color: #5a6268;
+}
+
+
+/*---------CONTACTO-------------*/
+
+.cuerpo {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: beige;
+    color: #333;
+    line-height: 1.6;
+}
+
+.encabezado {
+    color: #D72638;  
+    text-align: center;
+}
+
+/* Contenedor de contacto */
+
+.contact1 {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Mapa */
+.mapa {
+    position: relative;
+    padding-bottom: 56.25% ; /* Aspect ratio 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: 1.5rem;
+}
+
+.mapa iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Datos de contacto */
+.datos-contacto {
+    margin-top: 2rem;
+}
+
+.datos-contacto .cont {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+
+.datos-contacto strong {
+    color: #D72638;
+}
+
+.datos-contacto a {
+    color: #D72638;
+    text-decoration: none;
+    
+   
+font-weight: bold;
+}
+
+.datos-contacto a:hover {
+    text-decoration: underline;
+}
+
+/* Botones interactivos */
+.boton-contacto {
+    display: inline-block;
+    background: #D72638;
+    color: #FFFFFF;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+    margin-top: 1rem;
+}
+
+.boton-contacto:hover {
+    background: #B81E30;
+}
+
+/* Estilos generales para pantallas pequeñas */
+@media (max-width: 768px) {
+    
+    /* Contenedor principal */
+        .contact1 {
+            padding: 1rem;
+        }
+    
+        /* Títulos */
+        .encabezado {
+            font-size: 1.5rem;
+        }
+    
+        /* Mapa */
+        .mapa iframe {
+            height: 300px;
+        }
+    
+        /* Datos de contacto */
+        .datos-contacto .cont {
+            font-size: 1rem;
+        }
+    
+        /* Botones */
+        .boton-contacto {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+    
+        /* Redes sociales */
+        .redes-sociales img {
+            width: 30px;
+            margin: 0 5px;
+        }
+    }
+    
+    /* Estilos específicos para pantallas muy pequeñas */
+    @media (max-width: 480px) {
+        /* Reducir márgenes y padding */
+        .cuerpo {
+            margin: 0;
+            padding: 0;
+        }
+    
+        .contact1 {
+            padding: 0.5rem;
+        }
+       
+        /* Ajustar títulos y texto */
+        .encabezado {
+            font-size: 1.2rem;
+        }
+    
+        .datos-contacto .cont {
+            font-size: 0.9rem;
+        }
+    
+        /* Botones más compactos */
+        .boton-contacto {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.8rem;
+            margin-top: 0.3rem;
+        }
+    }
+
+    /*----------------AVISO_LEGAL------------------*/
+
+    /* Estilos generales para el cuerpo */
+.av {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Estilos del aviso legal */
+.av1 {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.av2 {
+    color: #e63946;
+}
+
+.AV4 {
+    margin-bottom: 1rem;
+}
+
+/* ===========================================
+   GALERÍA DINÁMICA - ESTILOS
+   =========================================== */
+
+/* Filtros de galería */
+.filtros-galeria {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 0 1rem;
+}
+
+.filtro-btn {
+    background: #ff6b35;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    margin: 0 0.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.filtro-btn:hover {
+    background: #e55a2b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.filtro-btn.active {
+    background: #2c3e50;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Grid de galería - Mayor especificidad para evitar conflictos */
+.prod1 .galeria-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 1.5rem !important;
+    padding: 2rem !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    /* Reset de estilos anteriores */
+    grid-template-rows: unset !important;
+}
+
+/* Items de galería */
+.prod1 .galeria-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.prod1 .galeria-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.prod1 .imagen-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.prod1 .galeria-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: block; /* Asegurar que se muestre como bloque */
+}
+
+.prod1 .galeria-item:hover .galeria-img {
+    transform: scale(1.05);
+}
+
+/* Overlay con información - Mayor especificidad */
+.prod1 .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(44, 62, 80, 0.9), rgba(255, 107, 53, 0.9));
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    padding: 1rem;
+}
+
+.prod1 .galeria-item:hover .overlay {
+    opacity: 1;
+}
+
+.prod1 .overlay h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.prod1 .overlay p {
+    margin: 0 0 1rem 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.prod1 .ver-mas {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.prod1 .ver-mas:hover {
+    background: white;
+    color: #2c3e50;
+    transform: scale(1.05);
+}
+
+/* LIGHTBOX MODAL */
+.lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 95%;
+    max-height: 95%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-modal img {
+    max-width: 90vw;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+    transition: all 0.3s ease;
+}
+
+/* Botones del lightbox */
+.lightbox-close {
+    position: absolute;
+    top: -50px;
+    right: -10px;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: rgba(255, 107, 53, 0.9);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: 2px solid white;
+    z-index: 10001;
+}
+
+.lightbox-close:hover {
+    background: #ff6b35;
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.5);
+}
+
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 107, 53, 0.9);
+    color: white;
+    border: 2px solid white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10001;
+    user-select: none;
+}
+
+.lightbox-prev {
+    left: -80px;
+}
+
+.lightbox-next {
+    right: -80px;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: #ff6b35;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.5);
+}
+
+.lightbox-prev:active,
+.lightbox-next:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+/* Caption del lightbox */
+.lightbox-caption {
+    color: white;
+    margin-top: 1.5rem;
+    text-align: center;
+    max-width: 600px;
+    padding: 0 1rem;
+}
+
+.lightbox-caption h3 {
+    margin: 0 0 0.8rem 0;
+    font-size: 1.8rem;
+    color: #ff6b35;
+    font-weight: 700;
+}
+
+.lightbox-caption p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* Contador del lightbox */
+.lightbox-counter {
+    color: #ff6b35;
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 107, 53, 0.3);
+}
+
+/* Animaciones */
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.fade-in-image {
+    animation: fadeInImage 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInImage {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .prod1 .galeria-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+        gap: 1rem !important;
+        padding: 1rem !important;
+    }
+    
+    .filtro-btn {
+        padding: 0.6rem 1rem;
+        margin: 0.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .lightbox-modal img {
+        max-width: 95vw;
+        max-height: 70vh;
+    }
+    
+    .lightbox-prev {
+        left: -50px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.5rem;
+    }
+    
+    .lightbox-next {
+        right: -50px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.5rem;
+    }
+    
+    .lightbox-close {
+        top: -40px;
+        right: -5px;
+        width: 40px;
+        height: 40px;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .prod1 .galeria-grid {
+        grid-template-columns: 1fr !important;
+        padding: 0.5rem !important;
+    }
+    
+    .filtros-galeria {
+        margin: 1rem 0;
+    }
+    
+    .lightbox-modal img {
+        max-width: 98vw;
+        max-height: 65vh;
+    }
+    
+    .lightbox-prev,
+    .lightbox-next {
+        position: fixed;
+        top: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+        background: rgba(255, 107, 53, 0.95);
+    }
+    
+    .lightbox-prev {
+        left: 15px;
+    }
+    
+    .lightbox-next {
+        right: 15px;
+    }
+    
+    .lightbox-close {
+        position: fixed;
+        top: 25px;
+        right: 25px;
+        background: rgba(255, 107, 53, 0.95);
+    }
+    
+    .lightbox-caption {
+        margin-top: 1rem;
+        padding: 0 2rem;
+    }
+    
+    .lightbox-caption h3 {
+        font-size: 1.4rem;
+    }
+    
+    .lightbox-caption p {
+        font-size: 0.9rem;
+    }
+}
+
+/*------------GALERIA DINÁMICA - ESTILOS ACTUALIZADOS--------------*/
+
+/* Contenedor principal de la galería - ahora compatible con la nueva estructura */
+.prod1 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    /* Removemos el grid estático para que funcione con la galería dinámica */
+}
+
+/* Estilos generales para imágenes (compatibilidad con código anterior) */
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+/* Estos estilos item-* ya no se usan con la galería dinámica pero los mantengo comentados por si los necesitas
+.item-a, .item-b, .item-c, .item-d, .item-e, .item-f, .item-g, .item-h, .item-i {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+*/

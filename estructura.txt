@@ -1,0 +1,16 @@
+/Prueba-html/
+  /assets/
+    /galeria/
+    /redes_sociales/
+  index.html
+  /js/
+    main.js
+  /views/
+    aviso_legal.html
+    galeria.html
+    presupuesto.html
+    contactos.html
+  /data/
+    noticias.json
+  /CSS/
+    estilos.css

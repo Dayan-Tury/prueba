@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bienvenidos a House of Pizza, tu lugar ideal para disfrutar las mejores pizzas artesanales.">
+    <title>House of Pizza</title>
+    <link rel="stylesheet" href="../CSS/estilos.css">
+    <link rel="icon" href="../assets/Logo.png" type="image/png">
+    <!-- Agregar estilos de Leaflet.js sin atributo integrity -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin>
+</head>
+<body class="cuerpo">
+    <div class="contenedor-principal">
+        <!-- Encabezado con logo y menú -->
+        <header>
+            <nav class="nav_header">
+                <img src="../assets/logo_P.png" alt="Logotipo de la empresa" width="500" height="500" class="logo">
+                <p class="empresa">House of Pizza</p>
+                <ul class="menu">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="./galeria.html">Galería</a></li>
+                    <li><a href="./presupuesto.html">Presupuesto</a></li>
+                    <li><a href="./contactos.html" class="activo">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="contact1">
+            <h1 class="encabezado">Contáctanos</h1>
+            <section class="ubicacion">
+                <h2 class="encabezado">Nuestra ubicación</h2>
+                <div id="map" style="height: 400px; width: 100%;"></div>
+            </section>
+
+            <section class="datos-contacto">
+                <h2 class="encabezado">Datos de contacto</h2>
+                <p class="cont"><strong>Dirección:</strong> C. Josefina Reveron, 38632 Guaza, Santa Cruz de Tenerife</p>
+                <p class="cont"><strong>Teléfono:</strong> <a href="tel:+123456789">+123 456 789</a></p>
+                <p class="cont"><strong>Email:</strong> <a href="mailto:contacto@houseofpizza.com">contacto@houseofpizza.com</a></p>
+                <p class="cont"><strong>Horario de atención:</strong> Lunes a Domingo, 10:00 AM - 10:00 PM</p>
+            </section>
+        </main>
+
+        <!-- Pie de página -->
+        <footer>
+            <div class="redes-sociales">
+                <a href="https://facebook.com"><img src="../assets/redes_sociales/Logo_de_Facebook.png" alt="Facebook" width="1200" height="1202"></a>
+                <a href="https://twitter.com"><img src="../assets/redes_sociales/twitter.png" alt="Twitter" width="900" height="900"></a>
+                <a href="https://instagram.com"><img src="../assets/redes_sociales/images.jpeg" alt="Instagram" width="225" height="225"></a>
+            </div>
+            <p>
+                Calle Principal #123, Ciudad, País | 
+                <a href="aviso_legal.html">Aviso Legal</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script>
+        // Inicializar el mapa
+        var map = L.map('map').setView([28.0500, -16.7167], 13); // Coordenadas de ejemplo para Tenerife
+
+        // Agregar capa de OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Agregar marcador para la ubicación del negocio
+        var marker = L.marker([28.0500, -16.7167]).addTo(map);
+        marker.bindPopup("House of Pizza: C. Josefina Reveron, 38632 Guaza, Santa Cruz de Tenerife").openPopup();
+
+        // Función para calcular la ruta
+        function calculateRoute() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var userLat = position.coords.latitude;
+                    var userLng = position.coords.longitude;
+
+                    // Agregar marcador para la ubicación del cliente
+                    var userMarker = L.marker([userLat, userLng]).addTo(map);
+                    userMarker.bindPopup("Tu ubicación").openPopup();
+
+                    // Dibujar una línea entre el cliente y el negocio
+                    var route = L.polyline([
+                        [userLat, userLng],
+                        [28.0500, -16.7167]
+                    ], {color: 'blue'}).addTo(map);
+
+                    map.fitBounds(route.getBounds());
+                });
+            } else {
+                alert("La geolocalización no está soportada por tu navegador.");
+            }
+        }
+
+        // Llamar a la función para calcular la ruta
+        calculateRoute();
+    </script>
+    <script src="../js/main.js" defer></script>
+</body>
+</html>
