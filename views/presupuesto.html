@@ -28,119 +28,114 @@
         </header>
 
 
-        <div class="container">  
-            <form id="myForm" name="myForm" action="#" method="get" target="_self">
+        <!-- FORMULARIO ÚNICO CON DOS SECCIONES -->
+        <form id="formularioCompleto" name="formularioCompleto" action="#" method="post">
+            
+            <!-- SECCIÓN 1: DATOS DE CONTACTO -->
+            <div class="container">  
+                <h2>Datos de Contacto</h2>
                 <ul class="flex-outer">
                     <li>
                         <label for="first-name">Nombre</label>
                         <input type="text" id="first-name" name="first-name" 
                             placeholder="Escriba su nombre" maxlength="15" 
-                            pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+" 
                             title="El nombre debe contener solo letras y un máximo de 15 caracteres." 
                             autocomplete="given-name" required>
-                        <p id="errorNombre" style="color: red; display: none;"></p>
+                        <p id="errorNombre" class="error-message hidden"></p>
                     </li>
                     <li>
                         <label for="surname">Apellidos</label>
                         <input type="text" id="surname" name="surname" 
                             placeholder="Escriba sus apellidos" maxlength="40" 
-                            pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+" 
                             title="Los apellidos deben contener solo letras y un máximo de 40 caracteres." 
                             autocomplete="family-name" required>
-                        <p id="errorApellido" style="color: red; display: none;"></p>
+                        <p id="errorApellido" class="error-message hidden"></p>
                     </li>
                     <li>
                         <label for="email">Correo Electrónico</label>
                         <input type="email" id="email" name="email" 
                             placeholder="Escriba su correo electrónico" 
-                            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" 
                             title="Ingrese un correo electrónico válido." 
                             autocomplete="email" required>
-                        <p id="errorEmail" style="color: red; display: none;"></p>
+                        <p id="errorEmail" class="error-message hidden"></p>
                     </li>
                     <li>
                         <label for="telephone">Teléfono</label>
                         <input type="tel" id="telephone" name="telephone" 
                             placeholder="Escriba su teléfono" maxlength="9" 
-                            pattern="\d{9}" 
                             title="El teléfono debe contener exactamente 9 dígitos." 
                             autocomplete="tel" required>
-                        <p id="errorTelefono" style="color: red; display: none;"></p>
+                        <p id="errorTelefono" class="error-message hidden"></p>
                     </li>
                     <li>
                         <label for="message">Solicite más información</label>
-                        <textarea rows="6" id="message" placeholder="Escriba aquí su mensaje" required></textarea>
-                    </li>
-                    <li class="liButtons">
-                        <button type="reset">Borrar</button>
-                        <button type="submit">Enviar</button>
+                        <textarea rows="6" id="message" name="message" placeholder="Escriba aquí su mensaje" required></textarea>
                     </li>
                 </ul>
-            </form>
-        </div>    
-    </div>
+            </div>    
 
-    <div class="container2">
-        <form id="presupuestoForm" name="presupuestoForm" action="#" method="post">
-            <h2>Calcula tu presupuesto</h2>
-            
-            <!-- Producto -->
-            <fieldset>
-                <legend>Selecciona un producto</legend>
-                <label>
-                    <input type="radio" name="producto" value="10" required> Producto A ($10)
-                </label>
-                <label>
-                    <input type="radio" name="producto" value="20"> Producto B ($20)
-                </label>
-                <label>
-                    <input type="radio" name="producto" value="30"> Producto C ($30)
-                </label>
-            </fieldset>
+            <!-- SECCIÓN 2: PRESUPUESTO -->
+            <div class="container2">
+                <h2>Calcula tu presupuesto</h2>
+                
+                <!-- Producto -->
+                <fieldset>
+                    <legend>Selecciona un producto</legend>
+                    <label>
+                        <input type="radio" name="producto" value="10" required> Producto A ($10)
+                    </label>
+                    <label>
+                        <input type="radio" name="producto" value="20"> Producto B ($20)
+                    </label>
+                    <label>
+                        <input type="radio" name="producto" value="30"> Producto C ($30)
+                    </label>
+                </fieldset>
 
-            <!-- Plazo -->
-            <fieldset>
-                <legend>Indica el plazo de entrega</legend>
-                <label for="plazo">Plazo (en meses):</label>
-                <input type="number" id="plazo" name="plazo" min="1" max="12" required>
-                <p>Descuento: 5% por cada mes adicional.</p>
-            </fieldset>
+                <!-- Plazo -->
+                <fieldset>
+                    <legend>Indica el plazo de entrega</legend>
+                    <label for="plazo">Plazo (en meses):</label>
+                    <input type="number" id="plazo" name="plazo" min="1" max="12" required>
+                    <p>Descuento: 5% por cada mes adicional.</p>
+                </fieldset>
 
-            <!-- Extras -->
-            <fieldset>
-                <legend>Selecciona extras</legend>
-                <label>
-                    <input type="checkbox" name="extra" value="5"> Extra 1 ($5)
-                </label>
-                <label>
-                    <input type="checkbox" name="extra" value="10"> Extra 2 ($10)
-                </label>
-                <label>
-                    <input type="checkbox" name="extra" value="15"> Extra 3 ($15)
-                </label>
-            </fieldset>
+                <!-- Extras -->
+                <fieldset>
+                    <legend>Selecciona extras</legend>
+                    <label>
+                        <input type="checkbox" name="extra" value="5"> Extra 1 ($5)
+                    </label>
+                    <label>
+                        <input type="checkbox" name="extra" value="10"> Extra 2 ($10)
+                    </label>
+                    <label>
+                        <input type="checkbox" name="extra" value="15"> Extra 3 ($15)
+                    </label>
+                </fieldset>
 
-            <!-- Presupuesto -->
-            <fieldset>
-                <legend>Presupuesto final</legend>
-                <div id="detallePresupuesto">
-                    <p id="subtotal" style="display: none;">Subtotal: $0</p>
-                    <p id="descuentoInfo" style="display: none; color: green;">Descuento aplicado: 0%</p>
-                    <p id="presupuestoFinal" style="font-weight: bold; font-size: 1.2em;">Total: $0</p>
-                </div>
-            </fieldset>
+                <!-- Presupuesto -->
+                <fieldset>
+                    <legend>Presupuesto final</legend>
+                    <div id="detallePresupuesto">
+                        <p id="subtotal" class="presupuesto-info presupuesto-subtotal hidden">Subtotal: $0</p>
+                        <p id="descuentoInfo" class="presupuesto-info presupuesto-descuento hidden">Descuento aplicado: 0%</p>
+                        <p id="presupuestoFinal" class="presupuesto-total">Total: $0</p>
+                    </div>
+                </fieldset>
 
-            <!-- Condiciones y envío -->
-            <fieldset>
-                <legend>Condiciones y envío</legend>
-                <label>
-                    <input type="checkbox" id="condiciones" name="condiciones" required> Acepto las condiciones de privacidad
-                </label>
-                <div>
-                    <button type="submit">Enviar</button>
-                    <button type="reset">Resetear</button>
-                </div>
-            </fieldset>
+                <!-- Condiciones y envío -->
+                <fieldset>
+                    <legend>Condiciones y envío</legend>
+                    <label>
+                        <input type="checkbox" id="condiciones" name="condiciones" required> Acepto las condiciones de privacidad
+                    </label>
+                    <div class="liButtons">
+                        <button type="reset">Resetear Todo</button>
+                        <button type="submit">Enviar Formulario</button>
+                    </div>
+                </fieldset>
+            </div>
         </form>
     </div>
 

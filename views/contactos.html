@@ -30,12 +30,12 @@
             <h1 class="encabezado">Contáctanos</h1>
             <section class="ubicacion">
                 <h2 class="encabezado">Nuestra ubicación</h2>
-                <div id="map" style="height: 400px; width: 100%;"></div>
+                <div id="map" class="mapa-container"></div>
             </section>
 
             <section class="datos-contacto">
                 <h2 class="encabezado">Datos de contacto</h2>
-                <p class="cont"><strong>Dirección:</strong> C. Josefina Reveron, 38632 Guaza, Santa Cruz de Tenerife</p>
+                <p class="cont"><strong>Dirección:</strong> C. Josefina Reverón, 38632 Guaza, Santa Cruz de Tenerife</p>
                 <p class="cont"><strong>Teléfono:</strong> <a href="tel:+123456789">+123 456 789</a></p>
                 <p class="cont"><strong>Email:</strong> <a href="mailto:contacto@houseofpizza.com">contacto@houseofpizza.com</a></p>
                 <p class="cont"><strong>Horario de atención:</strong> Lunes a Domingo, 10:00 AM - 10:00 PM</p>
@@ -57,47 +57,6 @@
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-    <script>
-        // Inicializar el mapa
-        var map = L.map('map').setView([28.0500, -16.7167], 13); // Coordenadas de ejemplo para Tenerife
-
-        // Agregar capa de OpenStreetMap
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '© OpenStreetMap contributors'
-        }).addTo(map);
-
-        // Agregar marcador para la ubicación del negocio
-        var marker = L.marker([28.0500, -16.7167]).addTo(map);
-        marker.bindPopup("House of Pizza: C. Josefina Reveron, 38632 Guaza, Santa Cruz de Tenerife").openPopup();
-
-        // Función para calcular la ruta
-        function calculateRoute() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function(position) {
-                    var userLat = position.coords.latitude;
-                    var userLng = position.coords.longitude;
-
-                    // Agregar marcador para la ubicación del cliente
-                    var userMarker = L.marker([userLat, userLng]).addTo(map);
-                    userMarker.bindPopup("Tu ubicación").openPopup();
-
-                    // Dibujar una línea entre el cliente y el negocio
-                    var route = L.polyline([
-                        [userLat, userLng],
-                        [28.0500, -16.7167]
-                    ], {color: 'blue'}).addTo(map);
-
-                    map.fitBounds(route.getBounds());
-                });
-            } else {
-                alert("La geolocalización no está soportada por tu navegador.");
-            }
-        }
-
-        // Llamar a la función para calcular la ruta
-        calculateRoute();
-    </script>
     <script src="../js/main.js" defer></script>
 </body>
 </html>
